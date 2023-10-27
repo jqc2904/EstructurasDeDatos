@@ -1,6 +1,3 @@
-#ifndef COLA_HPP
-#define COLA_HPP
-
 #include "NodoCola.hpp"
 #include "Pedido.hpp"
 
@@ -9,16 +6,14 @@ public:
     Cola();
     ~Cola();
     
-    void insertar(const Pedido& p);
-    Pedido eliminar();
-    void mostrar() const;
-    Pedido verPrimero() const;
-    int getLongitud() const;
+    void insertar(Pedido p);
+    Pedido* eliminar();
+    void mostrar();
+    Pedido* verPrimero();
+    int getLongitud();
 	void vaciar();
 
 private:
     pnodoCola primero, ultimo;
     int longitud;
 };
-
-#endif // COLA_HPP

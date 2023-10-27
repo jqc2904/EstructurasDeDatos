@@ -6,36 +6,36 @@ Pila::Pila() {
     longitud = 0;
 }
 
-void Pila::insertar(const Pedido& p) {
+void Pila::insertar(Pedido p) 
+{
     pnodoPila nuevo = new NodoPila(p, ultimo);
     ultimo = nuevo;
     longitud++;
 }
 
-Pedido Pila::extraer() {
+Pedido* Pila::extraer() {
+	pnodoPila nodo;
+	Pedido *p;
     if (!ultimo) {
-        // se devuelve un Pedido "vacío" por simplicidad.
-        return Pedido();
+        return nullptr;
     }
-    pnodoPila nodo = ultimo;
-    Pedido p = nodo->p;
-    ultimo = nodo->siguiente;
-    delete nodo;
-    longitud--;
-    return p;
+	nodo = ultimo;
+	ultimo = nodo->siguiente;
+	p = nodo->pedido;
+	longitud--;
+	delete nodo;
+	return p;
 }
 
-const Pedido& Pila::cima() const {
+Pedido* Pila::cima(){
+	pnodoPila nodo;
     if (!ultimo) {
-        // De manera similar al método extraer, puedes lanzar una excepción o manejar el error aquí.
-        // Aquí se devuelve un Pedido "vacío" por simplicidad.
-		Pedido pedidoVacio;
-        return pedidoVacio;
+        return nullptr;
     }
-    return ultimo->p;
+    return ultimo->pedido;
 }
 
-void Pila::mostrar() const {
+void Pila::mostrar() {
     pnodoPila aux = ultimo;
     cout << "\tContenido de la pila:" << endl;
     while (aux) {
@@ -45,7 +45,7 @@ void Pila::mostrar() const {
     cout << endl;
 }
 
-int Pila::getLongitud() const {
+int Pila::getLongitud(){
     return longitud;
 }
 

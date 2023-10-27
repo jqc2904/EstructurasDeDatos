@@ -2,9 +2,10 @@
 #include "Pedido.hpp"
 
 NodoPila::NodoPila(Pedido p, NodoPila* sig)
-: p(p), siguiente(sig)
 {
+	pedido = p;
+	siguiente = sig;
 }
-NodoPila::~NodoPila();
+NodoPila::~NodoPila()
 {
 }

@@ -1,61 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Session Name="C:\Users\JORGE\OneDrive\Escritorio\UNIVERSIDAD\3 CUATRIMESTRE\EEDD\EEDD\EEDD.workspace">
-  <int Value="2" Name="m_selectedTab"/>
+  <int Value="5" Name="m_selectedTab"/>
   <wxString Value="C:\Users\JORGE\OneDrive\Escritorio\UNIVERSIDAD\3 CUATRIMESTRE\EEDD\EEDD\EEDD.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
-      <wxString Value="C:\Users\JORGE\OneDrive\Escritorio\UNIVERSIDAD\3 CUATRIMESTRE\EEDD\EEDD\AMAZON\main.cpp" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
       <wxString Value="C:\Users\JORGE\OneDrive\Escritorio\UNIVERSIDAD\3 CUATRIMESTRE\EEDD\EEDD\AMAZON\Gestor.cpp" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\JORGE\OneDrive\Escritorio\UNIVERSIDAD\3 CUATRIMESTRE\EEDD\EEDD\AMAZON\Pedido.cpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
       <int Value="3" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\Users\JORGE\OneDrive\Escritorio\UNIVERSIDAD\3 CUATRIMESTRE\EEDD\EEDD\AMAZON\Pedido.hpp" Name="FileName"/>
+      <wxString Value="C:\Users\JORGE\OneDrive\Escritorio\UNIVERSIDAD\3 CUATRIMESTRE\EEDD\EEDD\AMAZON\Cola.cpp" Name="FileName"/>
+      <int Value="54" Name="FirstVisibleLine"/>
+      <int Value="65" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\JORGE\OneDrive\Escritorio\UNIVERSIDAD\3 CUATRIMESTRE\EEDD\EEDD\AMAZON\NodoCola.cpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
+      <int Value="3" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\JORGE\OneDrive\Escritorio\UNIVERSIDAD\3 CUATRIMESTRE\EEDD\EEDD\AMAZON\NodoCola.hpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="5" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\JORGE\OneDrive\Escritorio\UNIVERSIDAD\3 CUATRIMESTRE\EEDD\EEDD\AMAZON\Pila.cpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
+      <int Value="10" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\JORGE\OneDrive\Escritorio\UNIVERSIDAD\3 CUATRIMESTRE\EEDD\EEDD\AMAZON\NodoPila.cpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\JORGE\OneDrive\Escritorio\UNIVERSIDAD\3 CUATRIMESTRE\EEDD\EEDD\AMAZON\Gestor.hpp" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
+      <int Value="10" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\JORGE\OneDrive\Escritorio\UNIVERSIDAD\3 CUATRIMESTRE\EEDD\EEDD\AMAZON\NodoPila.hpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
+      <int Value="8" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>

@@ -11,7 +11,7 @@ int main(int argc, char** argv)
 
         cout << "\n\t--------------------------------------------------------------"
                 "--------\n";
-        cout << "\tPedidos en la pila -> " << 0 ;gestor.pedidosEnPila()
+        cout << "\tPedidos en la pila -> " << 0 ;gestor.pedidosEnPila();
              << "\n\tPedidos en las colas:\n \t\tSala A-> " << 0 ;gestor.pedidosEnSalaA(); << "\tSala B-> "
              << 0 ;gestor.pedidosEnSalaB(); << "\tSala C-> " << 0 ;gestor.pedidosEnSalaC(); << "\tSala D-> "
              << 0 ;gestor.pedidosEnSalaD();

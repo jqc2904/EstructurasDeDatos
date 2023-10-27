@@ -20,28 +20,25 @@ void Cola::vaciar() {
     longitud = 0;
 }
 
-void Cola::insertar(const Pedido& p) {
+void Cola::insertar(Pedido p) {
     pnodoCola nuevo = new NodoCola(p);
-    
-    if (!primero) {
-        primero = nuevo;
-    } else {
-        ultimo->siguiente = nuevo;
-    }
-    
+    if (ultimo)
+		ultimo->siguiente = nuevo;
     ultimo = nuevo;
+	if(!primero)
+		primero = nuevo;
     longitud++;
 }
 
-Pedido Cola::eliminar() {
-    pnodoCola nodo = primero;
-
+Pedido* Cola::eliminar() {
+    pnodoCola nodo;
+	Pedido *p;
+	nodo = primero;
     if (!nodo) {
-        return Pedido();
+        return nullptr;
     }
-
-    Pedido p = nodo->p;
-    primero = nodo->siguiente;
+	primero = nodo->siguiente;
+	p = nodo->pedido;
     delete nodo;
     if (!primero) {
         ultimo = nullptr;
@@ -51,22 +48,23 @@ Pedido Cola::eliminar() {
 }
 
 
-Pedido Cola::verPrimero() const {
+Pedido* Cola::verPrimero(){
     if (!primero) {
-        return Pedido();
+        return nullptr;
     }
-    return primero->p;
+    return primero->pedido;
 }
 
-int Cola::getLongitud() const {
+int Cola::getLongitud(){
     return longitud;
 }
 
-void Cola::mostrar() const {
+void Cola::mostrar(){
     pnodoCola aux = primero;
     std::cout << "\tContenido de la cola:" << std::endl;
     while (aux) {
-        std::cout << "DNI: " << aux->p.getDNI() << ", Urgencia: " << (aux->p.getEsUrgente() ? "Sí" : "No") << ", Número de Pedido: " << aux->p.getNPedido() << std::endl;
+        std::cout << "DNI: " << aux->pedido->getDNI() << ", Urgencia: " << (aux->pedido->getEsUrgente() ? "Sí" : "No") << ", Número de Pedido: " << aux->pedido.getNPedido() << std::endl;
         aux = aux->siguiente;
     }
+	cout << endl;
 }

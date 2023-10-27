@@ -6,10 +6,10 @@ using namespace std;
 class NodoPila
 {
 	public:
-		NodoPila(Pedido p, NodoPila* sig = NULL);
+		NodoPila(Pedido p, NodoPila* sig = nullptr);
 		~NodoPila();
 	private:
-		Pedido p;
+		Pedido* pedido;
 		NodoPila* siguiente;
 		friend class Pila;
 };

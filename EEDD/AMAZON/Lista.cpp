@@ -10,17 +10,17 @@ Lista::~Lista() {
     clear();
 }
 
-int Lista::getLongitud() const {
+int Lista::getLongitud(){
     return longitud;
 }
 
-Pedido Lista::getPedidoMayor() const {
+Pedido* Lista::getPedidoMayor(){
     if (longitud == 0) {
-        return Pedido();
+        return nullptr;
     }
 
     pnodoLista aux = primero;
-    Pedido mayor = aux->valor;
+    Pedido* mayor = aux->valor;
 
     while (aux) {
         if (aux->valor.getNPedido() > mayor.getNPedido()) {
@@ -32,9 +32,9 @@ Pedido Lista::getPedidoMayor() const {
     return mayor;
 }
 
-Pedido Lista::getPedidoMenor() const {
+Pedido* Lista::getPedidoMenor(){
     if (longitud == 0) {
-        return Pedido();
+        return nullptr;
     }
 
     pnodoLista aux = primero;
@@ -50,7 +50,7 @@ Pedido Lista::getPedidoMenor() const {
     return menor;
 }
 
-void Lista::mostrar() const {
+void Lista::mostrar(){
     pnodoLista aux = primero;
     std::cout << "Contenido de la lista:" << std::endl;
     
@@ -87,7 +87,7 @@ void Lista::ordenarPorPedido() {
     } while (intercambio);
 }
 
-void Lista::append(const Pedido& p) {
+void Lista::append(Pedido p) {
     pnodoLista nuevo = new NodoLista(p);
     
     if (!primero) {
@@ -111,11 +111,4 @@ void Lista::clear() {
     }
     longitud = 0;
 }
-
-void Lista::extend(const Lista& other) {
-    pnodoLista aux = other.primero;
-    while (aux) {
-        append(aux->valor);
-        aux = aux->siguiente;
-    }
 }
