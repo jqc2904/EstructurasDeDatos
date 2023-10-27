@@ -63,8 +63,8 @@ void Cola::mostrar(){
     pnodoCola aux = primero;
     std::cout << "\tContenido de la cola:" << std::endl;
     while (aux) {
-        std::cout << "DNI: " << aux->pedido->getDNI() << ", Urgencia: " << (aux->pedido->getEsUrgente() ? "Sí" : "No") << ", Número de Pedido: " << aux->pedido.getNPedido() << std::endl;
+        std::cout << "DNI: " << aux->pedido->getDNI() << ", Urgencia: " << (aux->pedido->getEsUrgente() ? "Sí" : "No") << ", Número de Pedido: " << aux->pedido->getNPedido() << std::endl;          
         aux = aux->siguiente;
     }
-	cout << endl;
+
 }
