@@ -20,7 +20,7 @@ void Cola::vaciar() {
     longitud = 0;
 }
 
-void Cola::insertar(Pedido p) {
+void Cola::insertar(Pedido* p) {
     pnodoCola nuevo = new NodoCola(p);
     if (ultimo)
 		ultimo->siguiente = nuevo;
@@ -32,7 +32,7 @@ void Cola::insertar(Pedido p) {
 
 Pedido* Cola::eliminar() {
     pnodoCola nodo;
-	Pedido *p;
+	Pedido* p;
 	nodo = primero;
     if (!nodo) {
         return nullptr;

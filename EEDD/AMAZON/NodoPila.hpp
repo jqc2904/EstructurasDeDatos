@@ -6,7 +6,7 @@ using namespace std;
 class NodoPila
 {
 	public:
-		NodoPila(Pedido p, NodoPila* sig = nullptr);
+		NodoPila(Pedido* p, NodoPila* sig = nullptr);
 		~NodoPila();
 	private:
 		Pedido* pedido;

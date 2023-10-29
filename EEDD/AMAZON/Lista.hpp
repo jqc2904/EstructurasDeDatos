@@ -5,7 +5,7 @@ public:
     Lista();
     ~Lista();
     
-    void append(Pedido p);
+    void append(Pedido* p);
     void clear();
 	void ordenarPorPedido();
 	void mostrar();

@@ -3,7 +3,7 @@
 
 class NodoCola {
 public:
-    NodoCola(Pedido p, NodoCola* sig = nullptr);
+    NodoCola(Pedido* p, NodoCola* sig = nullptr);
     ~NodoCola();
 
 private:

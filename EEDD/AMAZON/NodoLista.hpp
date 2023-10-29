@@ -1,17 +1,16 @@
-#ifndef NODOLISTA_HPP
-#define NODOLISTA_HPP
-
+#include <iostream>
 #include "Pedido.hpp"
 
 class NodoLista {
 public:
-    NodoLista(const Pedido& p, NodoLista* sig = nullptr);
-    // Otros constructores y métodos si son necesarios
+    NodoLista(Pedido* p, NodoLista* sig = nullptr);
+    ~NodoLista();
 
-    Pedido valor;
+private:
+    Pedido* pedido;
     NodoLista* siguiente;
+
+    friend class Lista;
 };
 
 typedef NodoLista* pnodoLista;
-
-#endif // NODOLISTA_HPP

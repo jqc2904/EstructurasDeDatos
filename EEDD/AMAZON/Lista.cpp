@@ -20,11 +20,11 @@ Pedido* Lista::getPedidoMayor(){
     }
 
     pnodoLista aux = primero;
-    Pedido* mayor = aux->valor;
+    Pedido* mayor = aux->pedido;
 
     while (aux) {
-        if (aux->valor.getNPedido() > mayor.getNPedido()) {
-            mayor = aux->valor;
+        if (aux->pedido->getNPedido() > mayor->getNPedido()) {
+            mayor = aux->pedido;
         }
         aux = aux->siguiente;
     }
@@ -38,11 +38,11 @@ Pedido* Lista::getPedidoMenor(){
     }
 
     pnodoLista aux = primero;
-    Pedido menor = aux->valor;
+    Pedido* menor = aux->pedido;
 
     while (aux) {
-        if (aux->valor.getNPedido() < menor.getNPedido()) {
-            menor = aux->valor;
+        if (aux->pedido->getNPedido() < menor->getNPedido()) {
+            menor = aux->pedido;
         }
         aux = aux->siguiente;
     }
@@ -55,7 +55,7 @@ void Lista::mostrar(){
     std::cout << "Contenido de la lista:" << std::endl;
     
     while (aux) {
-        std::cout << "DNI: " << aux->valor.getDNI() << ", Urgencia: " << (aux->valor.getEsUrgente() ? "Sí" : "No") << ", Número de Pedido: " << aux->valor.getNPedido() << ", Número de Seguimiento: " << aux->valor.getNSeguimiento() << std::endl;
+        std::cout << "DNI: " << aux->pedido->getDNI() << ", Urgencia: " << (aux->pedido->getEsUrgente() ? "Sí" : "No") << ", Número de Pedido: " << aux->pedido->getNPedido() << ", Número de Seguimiento: " << aux->pedido->getNSeguimiento() << std::endl;
         aux = aux->siguiente;
     }
 }
@@ -73,11 +73,11 @@ void Lista::ordenarPorPedido() {
         pnodoLista siguiente = primero->siguiente;
 
         while (siguiente) {
-            if (actual->valor.getNPedido() > siguiente->valor.getNPedido()) {
+            if (actual->pedido->getNPedido() > siguiente->pedido->getNPedido()) {
                 // Intercambia los nodos si el pedido actual es mayor que el siguiente
-                Pedido temp = actual->valor;
-                actual->valor = siguiente->valor;
-                siguiente->valor = temp;
+                Pedido* temp = actual->pedido;
+                actual->pedido = siguiente->pedido;
+                siguiente->pedido = temp;
                 intercambio = true;
             }
 
@@ -87,7 +87,7 @@ void Lista::ordenarPorPedido() {
     } while (intercambio);
 }
 
-void Lista::append(Pedido p) {
+void Lista::append(Pedido* p) {
     pnodoLista nuevo = new NodoLista(p);
     
     if (!primero) {
@@ -110,5 +110,4 @@ void Lista::clear() {
         delete temp;
     }
     longitud = 0;
-}
 }

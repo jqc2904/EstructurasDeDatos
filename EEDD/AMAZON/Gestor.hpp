@@ -1,7 +1,11 @@
+#include "Cola.cpp"
+#include "Pila.cpp"
+#include "Lista.cpp"
 class Gestor
 {
 	public:
 		Gestor();
+		void generar12Pedidos();
 		void pedidosEnListaEstandar();
 		void pedidosEnListaUrgente();
 		void pedidosEnSalaA();
@@ -21,9 +25,18 @@ class Gestor
 		void pedidosEnPila();
 		void muestraPedidos();
 	private:
-		int numPedU = 1;
-		int numPedE = 51;
-		int generarNSeguimiento();
-		int generarNPedido();
+		Pila pila;
+		int numPedU;
+		int numPedE;
+		int numSegU;
+		int numSegE;
+		Cola A;
+		Cola B;
+		Cola C;
+		Cola D;
+		Lista estandar;
+		Lista urgente;
+		int generarNSeguimiento(Pedido* p);
+		int generarNPedido(Pedido* p);
 		char* generarDNI();
 };

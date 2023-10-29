@@ -1,3 +1,6 @@
+#ifndef PEDIDO_CPP
+#define PEDIDO_CPP
+
 #include <string>
 #include "Pedido.hpp"
 
@@ -43,3 +46,5 @@ void Pedido::setEsUrgente(bool urgente) {
 
 Pedido::~Pedido() {
 }
+
+#endif // PEDIDO_CPP

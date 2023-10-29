@@ -10,17 +10,35 @@ int main(int argc, char** argv)
     do {
 
         cout << "\n\t--------------------------------------------------------------"
-                "--------\n";
-        cout << "\tPedidos en la pila -> " << 0 ;gestor.pedidosEnPila();
-             << "\n\tPedidos en las colas:\n \t\tSala A-> " << 0 ;gestor.pedidosEnSalaA(); << "\tSala B-> "
-             << 0 ;gestor.pedidosEnSalaB(); << "\tSala C-> " << 0 ;gestor.pedidosEnSalaC(); << "\tSala D-> "
-             << 0 ;gestor.pedidosEnSalaD();
-             << " \n\tPedidos en las listas:\n \t\tEstandar-> "
-             << 0 ;gestor.pedidosEnListaEstandar(); << "\tUrgentes-> " << 0 ;gestor.pedidosEnListaUrgentes();
-             << "\n\tPedidos en el arbol -> " << 0                            /*gestor.pedidosEnArbol()*/
-             << "\n";
-        cout << "\t----------------------------------------------------------------"
-                "------\n\n";
+				"--------\n";
+		cout << "\tPedidos en la pila -> ";
+		gestor.pedidosEnPila();
+		cout << "\n";
+		cout << "\tPedidos en las colas:\n";
+		cout << "\t\tSala A-> ";
+		gestor.pedidosEnSalaA();
+		cout << "\n";
+		cout << "\t\tSala B-> ";
+		gestor.pedidosEnSalaB();
+		cout << "\n";
+		cout << "\t\tSala C-> ";
+		gestor.pedidosEnSalaC();
+		cout << "\n";
+		cout << "\t\tSala D-> ";
+		gestor.pedidosEnSalaD();
+		cout << "\n";
+		cout << "\tPedidos en las listas:\n";
+		cout << "\t\tEstandar-> ";
+		gestor.pedidosEnListaEstandar();
+		cout << "\n";
+		cout << "\t\tUrgentes-> ";
+		gestor.pedidosEnListaUrgente();
+		cout << "\n";
+		cout << "\tPedidos en el arbol -> ";
+		//gestor.pedidosEnArbol();
+		cout << "\n";
+		cout << "\t----------------------------------------------------------------"
+				"------\n\n";
 
         cout << "\tA. Generar 12 Pedidos de forma aleatoria y almacenarlos en la "
                 "Pila.\n";
@@ -65,9 +83,9 @@ int main(int argc, char** argv)
         switch(opcion) {
 
         case 'A':
-            gestor.genera12Pedidos();
+            gestor.generar12Pedidos();
             break;
-        case 'B':
+       case 'B':
             gestor.muestraPedidos();
             break;
         case 'C':
@@ -92,7 +110,7 @@ int main(int argc, char** argv)
             gestor.muestraPedidosEstandar();
             break;
         case 'J':
-            gestor.muestraPedidosUrgentes();
+            gestor.muestraPedidosUrgente();
             break;
         case 'K':
             gestor.buscarPedidos();

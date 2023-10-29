@@ -6,7 +6,7 @@ public:
     Cola();
     ~Cola();
     
-    void insertar(Pedido p);
+    void insertar(Pedido* p);
     Pedido* eliminar();
     void mostrar();
     Pedido* verPrimero();

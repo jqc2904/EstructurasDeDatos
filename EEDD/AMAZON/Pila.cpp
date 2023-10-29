@@ -6,7 +6,7 @@ Pila::Pila() {
     longitud = 0;
 }
 
-void Pila::insertar(Pedido p) 
+void Pila::insertar(Pedido* p) 
 {
     pnodoPila nuevo = new NodoPila(p, ultimo);
     ultimo = nuevo;
@@ -15,7 +15,7 @@ void Pila::insertar(Pedido p)
 
 Pedido* Pila::extraer() {
 	pnodoPila nodo;
-	Pedido *p;
+	Pedido* p;
     if (!ultimo) {
         return nullptr;
     }
@@ -27,19 +27,11 @@ Pedido* Pila::extraer() {
 	return p;
 }
 
-Pedido* Pila::cima(){
-	pnodoPila nodo;
-    if (!ultimo) {
-        return nullptr;
-    }
-    return ultimo->pedido;
-}
-
 void Pila::mostrar() {
     pnodoPila aux = ultimo;
     cout << "\tContenido de la pila:" << endl;
     while (aux) {
-        cout << "DNI: " << aux->valor.getDNI() << ", Urgente: " << (aux->valor.getEsUrgente() ? "Sí" : "No") << endl;
+        cout << "DNI: " << aux->pedido->getDNI() << ", Urgente: " << (aux->pedido->getEsUrgente() ? "Sí" : "No") << endl;
         aux = aux->siguiente;
     }
     cout << endl;

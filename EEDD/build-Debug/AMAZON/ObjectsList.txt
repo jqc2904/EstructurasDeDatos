@@ -1,0 +1,1 @@
+../build-Debug/AMAZON/NodoLista.cpp.o ../build-Debug/AMAZON/Gestor.cpp.o ../build-Debug/AMAZON/Lista.cpp.o ../build-Debug/AMAZON/NodoPila.cpp.o ../build-Debug/AMAZON/Cola.cpp.o ../build-Debug/AMAZON/NodoCola.cpp.o ../build-Debug/AMAZON/Pedido.cpp.o ../build-Debug/AMAZON/Pila.cpp.o ../build-Debug/AMAZON/main.cpp.o   

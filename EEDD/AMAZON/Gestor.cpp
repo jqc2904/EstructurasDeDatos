@@ -1,9 +1,6 @@
 #include <iostream>
 #include <string>
 #include "Pedido.cpp"
-#include "Cola.cpp"
-#include "Pila.cpp"
-#include "Lista.cpp"
 #include "Gestor.hpp"
 
 Gestor::Gestor()
@@ -60,12 +57,12 @@ void Gestor::reiniciar()
 }
 void Gestor::buscarPedidos()
 {
-	mayorPrioridadEs = estandar.getPedidoMenor();
-	menorPrioridadUr = urgente.getPedidoMayor();
+	Pedido* mayorPrioridadEs = estandar.getPedidoMenor();
+	Pedido* menorPrioridadUr = urgente.getPedidoMayor();
 	cout << "El pedido de mayor prioridad de la lista estandar es: " <<endl;
-	cout << "DNI: " << mayorPrioridadEs.getDNI() << ", Urgencia: " << (mayorPrioridadEs.getEsUrgente() ? "Sí" : "No") << ", Número de Pedido: " << mayorPrioridadEs.getNPedido() << ", Número de Seguimiento: " << mayorPrioridadEs.getNSeguimiento() << std::endl;
+	cout << "DNI: " << mayorPrioridadEs->getDNI() << ", Urgencia: " << (mayorPrioridadEs->getEsUrgente() ? "Sí" : "No") << ", Número de Pedido: " << mayorPrioridadEs->getNPedido() << ", Número de Seguimiento: " << mayorPrioridadEs->getNSeguimiento() << std::endl;
 	cout << "El pedido de menor prioridad de la lista urgente es: " <<endl;
-	cout << "DNI: " << menorPrioridadUr.getDNI() << ", Urgencia: " << (menorPrioridadUr.getEsUrgente() ? "Sí" : "No") << ", Número de Pedido: " << menorPrioridadUr.getNPedido() << ", Número de Seguimiento: " << menorPrioridadUr.getNSeguimiento() << std::endl;
+	cout << "DNI: " << menorPrioridadUr->getDNI() << ", Urgencia: " << (menorPrioridadUr->getEsUrgente() ? "Sí" : "No") << ", Número de Pedido: " << menorPrioridadUr->getNPedido() << ", Número de Seguimiento: " << menorPrioridadUr->getNSeguimiento() << std::endl;
 
 }
 void Gestor::muestraPedidosUrgente()
@@ -80,26 +77,26 @@ void Gestor::enlistarPedidos()
 {
 	for(int i = 0; i<=A.getLongitud();i++)
 	{
-		Pedido p = A.eliminar();
-		p.setNSeguimiento(generarNSeguimiento(p));
+		Pedido* p = A.eliminar();
+		p->setNSeguimiento(generarNSeguimiento(p));
 		estandar.append(p);
 	}
 	for(int i = 0; i<=B.getLongitud();i++)
 	{
-		Pedido p = B.eliminar();
-		p.setNSeguimiento(generarNSeguimiento(p));
+		Pedido* p = B.eliminar();
+		p->setNSeguimiento(generarNSeguimiento(p));
 		estandar.append(p);
 	}
 	for(int i = 0; i<=C.getLongitud();i++)
 	{
-		Pedido p = C.eliminar();
-		p.setNSeguimiento(generarNSeguimiento(p));
+		Pedido* p = C.eliminar();
+		p->setNSeguimiento(generarNSeguimiento(p));
 		urgente.append(p);
 	}
 	for(int i = 0; i<=D.getLongitud();i++)
 	{
-		Pedido p = D.eliminar();
-		p.setNSeguimiento(generarNSeguimiento(p));
+		Pedido* p = D.eliminar();
+		p->setNSeguimiento(generarNSeguimiento(p));
 		urgente.append(p);
 	}
 	estandar.ordenarPorPedido();
@@ -114,25 +111,26 @@ void Gestor::borraPedidosColas()
 }
 void Gestor::muestraPedidosSalasCyD()
 {
-	cout << "El contenido de la cola C es:"<<endl
+	cout << "El contenido de la cola C es:"<<endl;
 	C.mostrar();
-	cout << "El contenido de la cola D es:"<<endl
+	cout << "El contenido de la cola D es:"<<endl;
 	D.mostrar();
 }
 void Gestor::muestraPedidosSalasAyB()
 {
-	cout << "El contenido de la cola A es:"<<endl
+	cout << "El contenido de la cola A es:"<<endl;
 	A.mostrar();
-	cout << "El contenido de la cola B es:"<<endl
+	cout << "El contenido de la cola B es:"<<endl;
 	B.mostrar();
 }
 void Gestor::encolarPedidos()
 {
 	for(int i = 0; i<=pila.getLongitud(); i++)
 	{
-		Pedido p = pila.extraer();
-		p.setNPedido(generarNPedido(p));
-		if(p.getEsUrgente())
+		Pedido* p = pila.extraer();
+		int num = generarNPedido(p);
+		p->setNPedido(num);
+		if(p->getEsUrgente())
 		{
 			if(C.getLongitud()<=D.getLongitud())
 			{
@@ -166,22 +164,24 @@ void Gestor::pedidosEnPila()
 }
 void Gestor::muestraPedidos()
 {
+
 	pila.mostrar();
 }
 void Gestor::generar12Pedidos()
 {
 	for(int i = 0; i <=12; i++)
 	{
+		Pedido pedido;
 		bool urgente = rand()%2 == 1;
 		pedido.setDNI(generarDNI());
 		pedido.setEsUrgente(urgente);
-		pila.insertar(pedido);
+		this->pila.insertar(&pedido);
 	}
 }
-int Gestor::generarNPedido(Pedido p)
+int Gestor::generarNPedido(Pedido* p)
 {	
 	int n;
-	if(p.getEsUrgente())																			//
+	if(p->getEsUrgente())																			//
 	{
 		n = numPedU;
 		this->numPedU++;
@@ -193,10 +193,11 @@ int Gestor::generarNPedido(Pedido p)
 	}
 	return n;
 };
-int Gestor::generarNSeguimiento(Pedido p)
+int Gestor::generarNSeguimiento(Pedido* p)
 {	
+
 	int n;
-	if(p.getEsUrgente())																			//
+	if(p->getEsUrgente())																			//
 	{
 		n = numSegU;
 		this->numSegU++;
@@ -208,11 +209,11 @@ int Gestor::generarNSeguimiento(Pedido p)
 	}
 	return n;
 };
-char[10] Gestor::generarDNI()
+char* Gestor::generarDNI()
 {
-	char[10] DNI;
-	char letras[] = "TRWAGMYFPDXBNJZSQVHLCKE"
-	int numDNI = 0, aux = 1E7;
+	char DNI[10];
+	char letras[] = "TRWAGMYFPDXBNJZSQVHLCKE";
+	int numDNI = 0, aux = 10000000;
 	for(int i = 0; i<8; i++)
 	{
 		int num = rand() % 10;
